@@ -1,0 +1,10 @@
+cpg.bin
+target/
+.idea/
+/.bsp
+/joern-inst
+/workspace
+.bloop/
+.direnv/
+.metals/
+.vscode/
