@@ -8,3 +8,5 @@ target/
 .direnv/
 .metals/
 .vscode/
+
+domain-classes/src/main/generated/io/shiftleft/codepropertygraph/generated
