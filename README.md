@@ -2,6 +2,11 @@
 
 InkSpect for Java
 
+InkSpect is a prototype Static Application Security Testing (SAST) tool built on **[Joern](https://github.com/joernio/joern)**, focused on Java.  
+**Status:** Prototype ; not yet operational.
+It offers Taint Analysis based on a Code Property Graph.
+Please build once before modifying the code.
+
 ## Prerequisite
 
 Install development tools:
