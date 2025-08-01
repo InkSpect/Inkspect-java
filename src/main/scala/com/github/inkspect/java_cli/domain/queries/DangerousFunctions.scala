@@ -1,4 +1,4 @@
-package com.github.inkspect.java_cli
+package com.github.inkspect.java_cli.domain.queries
 
 // import io.joern.scanners.*
 import io.shiftleft.semanticcpg.language.*

@@ -7,7 +7,7 @@ import io.joern.x2cpg.X2Cpg.applyDefaultOverlays
 import io.shiftleft.semanticcpg.language._
 import scala.util.{Failure, Success}
 
-import com.github.inkspect.java_cli.DangerousFunctions
+import com.github.inkspect.java_cli.domain.queries.DangerousFunctions
 
 class AnalyzeSourceCodeUseCase() {
   def execute(sourcePath: String): Unit = {
