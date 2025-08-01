@@ -25,7 +25,7 @@ sbt clean stage
 - Run CLI (Command Line Interface)
 
 ```
-./inkspect_java_cli
+./inkspect_java_cli -s testprogram/
 ```
 
 - Run REPL (Read-Eval-Print-Loop) for interactive usage

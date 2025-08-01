@@ -1,4 +1,4 @@
-package com.github.inkspect.java_cli
+package com.github.inkspect.java_cli.domain.queries
 
 // import io.joern.scanners.*
 import io.shiftleft.semanticcpg.language.*
@@ -22,17 +22,18 @@ object DangerousFunctions extends QueryBundle {
       score = 8,
       withStrRep({ cpg =>
 
-      println("=====================")
+        println("=====================")
         println("execUsed:")
 
         cpg.call
-          .name("exec").foreach(println)
+          .name("exec")
+          .foreach(println)
 
         cpg.call
-          .name("exec") 
+          .name("exec")
 
-        //cpg.method("java.lang.Runtime.exec").foreach(println)
-        //cpg.method("java.lang.Runtime.exec").callIn
+        // cpg.method("java.lang.Runtime.exec").foreach(println)
+        // cpg.method("java.lang.Runtime.exec").callIn
       }),
       tags = List("badfn", "default")
     )
