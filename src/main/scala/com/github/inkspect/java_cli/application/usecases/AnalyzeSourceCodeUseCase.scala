@@ -8,6 +8,9 @@ import io.shiftleft.semanticcpg.language._
 import scala.util.{Failure, Success}
 
 import com.github.inkspect.java_cli.domain.queries.DangerousFunctions
+import com.github.inkspect.java_cli.domain.queries.spring_boot.SpringBootCSRF
+import io.joern.dataflowengineoss.queryengine.EngineContext
+
 
 class AnalyzeSourceCodeUseCase() {
   def execute(sourcePath: String): Unit = {
@@ -31,9 +34,9 @@ class AnalyzeSourceCodeUseCase() {
 
         // Security analysis
         println("Running security analysis...")
-        println("Checking for dangerous function calls...")
 
-        val queries = List(DangerousFunctions.execUsed())
+        val context: EngineContext = EngineContext()
+        val queries = List(DangerousFunctions.execUsed(), SpringBootCSRF.csrfDisableAll()(context))
         new ScanPass(cpg, queries).createAndApply()
         outputFindings(cpg)
 
