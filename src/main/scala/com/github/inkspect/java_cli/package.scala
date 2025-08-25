@@ -6,6 +6,7 @@ import io.shiftleft.semanticcpg.language.*
 import flatgraph.help.{Doc, DocSearchPackages, Traversal, TraversalSource}
 
 import scala.jdk.CollectionConverters.IteratorHasAsScala
+import io.joern.dataflowengineoss.queryengine.EngineContext
 
 package object java_cli {
 
@@ -42,4 +43,7 @@ package object java_cli {
     def customStarterStep: Iterator[String] =
       cpg.method.parameter.name
   }
+
+  implicit def context(implicit cpg: Cpg): EngineContext = EngineContext()
+
 }

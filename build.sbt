@@ -46,6 +46,9 @@ enablePlugins(JavaAppPackaging)
 
 ThisBuild / licenses := List("Apache-2.0" -> url("http://www.apache.org/licenses/LICENSE-2.0"))
 
+Test / logBuffered := false
+Test / testOptions += Tests.Argument(TestFrameworks.ScalaTest, "-oDF")
+
 Global / onChangedBuildSource := ReloadOnSourceChanges
 
 ThisBuild / resolvers ++= Seq(
