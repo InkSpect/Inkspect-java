@@ -14,20 +14,24 @@ lazy val schemaExtender = Projects.schemaExtender
 dependsOn(domainClasses)
 
 libraryDependencies ++= Seq(
-  "com.github.scopt"        %% "scopt"             % Versions.scopt,
-  "org.apache.logging.log4j" % "log4j-slf4j2-impl" % Versions.log4j     % Optional,
-  "io.joern"                %% "console"           % Versions.joern,
-  "io.joern"                %% "x2cpg"             % Versions.joern,
-  "io.joern"                %% "javasrc2cpg"       % Versions.joern,
-  "io.joern"                %% "joern-cli"         % Versions.joern,
-  "io.joern"                %% "semanticcpg"       % Versions.joern,
-  "io.joern"                %% "semanticcpg"       % Versions.joern     % Test classifier "tests",
-  "org.scalatest"           %% "scalatest"         % Versions.scalatest % Test
+  "com.github.scopt" %% "scopt" % Versions.scopt,
+  // "org.apache.logging.log4j" % "log4j-slf4j2-impl" % Versions.log4j     % Optional,
+  "ch.qos.logback" % "logback-classic" % "1.4.14",
+  "io.joern"      %% "console"         % Versions.joern,
+  "io.joern"      %% "x2cpg"           % Versions.joern,
+  "io.joern"      %% "javasrc2cpg"     % Versions.joern,
+  "io.joern"      %% "joern-cli"       % Versions.joern,
+  "io.joern"      %% "semanticcpg"     % Versions.joern,
+  "io.joern"      %% "semanticcpg"     % Versions.joern     % Test classifier "tests",
+  "org.scalatest" %% "scalatest"       % Versions.scalatest % Test
 )
 
 // mostly so that `sbt assembly` works, but also to ensure that we don't end up
 // with unexpected shadowing in jar hell
-excludeDependencies ++= Seq(ExclusionRule("io.shiftleft", "codepropertygraph-domain-classes_3"))
+excludeDependencies ++= Seq(
+  ExclusionRule("io.shiftleft", "codepropertygraph-domain-classes_3"),
+  ExclusionRule("org.wildfly.common", "wildfly-common")
+)
 
 assembly / assemblyMergeStrategy := {
   case "log4j2.xml"                                             => MergeStrategy.first
@@ -42,7 +46,30 @@ assembly / assemblyMergeStrategy := {
 
 ThisBuild / Compile / scalacOptions ++= Seq("-feature", "-deprecation", "-language:implicitConversions")
 
-enablePlugins(JavaAppPackaging)
+enablePlugins(JavaAppPackaging, GraalVMNativeImagePlugin)
+
+val graalVMNativeImageReflectionFiles = Seq(
+  "../../src/main/resources/META-INF/native-image/reflect-config.json"
+).mkString(",")
+
+graalVMNativeImageOptions := Seq(
+  "-H:+UnlockExperimentalVMOptions",
+  //Compile options for GraalVM Native Image (Support for Linux x86-64 and Apple Silicon ARM64)
+  "-H:-CheckToolchain",
+  "-H:CCompilerPath=/usr/bin/clang",
+  s"-H:ReflectionConfigurationFiles=$graalVMNativeImageReflectionFiles",
+  // Include zstd-jni required by Flatgraph Storage
+  "--initialize-at-run-time=com.github.luben.zstd",
+  "-H:IncludeResources=.*libzstd-jni.*\\.so$",
+  "-H:IncludeResources=.*libzstd-jni.*\\.dylib$",
+  "-H:IncludeResources=.*libzstd-jni.*\\.dll$",
+  // Options for debugging and analysis
+  "-H:+ReportExceptionStackTraces",
+  "--no-fallback",
+  "--allow-incomplete-classpath",
+  "--report-unsupported-elements-at-runtime",
+  "--verbose"
+)
 
 ThisBuild / licenses := List("Apache-2.0" -> url("http://www.apache.org/licenses/LICENSE-2.0"))
 
@@ -58,6 +85,6 @@ ThisBuild / resolvers ++= Seq(
   "Gradle Releases" at "https://repo.gradle.org/gradle/libs-releases/"
 )
 
-Compile / mainClass := Some("com.github.inkspect.java_cli.Main")
+Compile / mainClass                    := Some("com.github.inkspect.java_cli.Main")
 Compile / doc / sources                := Seq.empty
 Compile / packageDoc / publishArtifact := false
