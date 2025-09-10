@@ -38,3 +38,12 @@ sbt clean stage
 ```
 ./inkspect_java_repl
 ```
+
+# Options
+
+```
+-s, --source <value>    source code directory to analyze
+-j, --jdk-path <value>  JDK path for type resolution (default: $JAVA_HOME)
+--help                  Show this help message
+--version               Show version information
+```

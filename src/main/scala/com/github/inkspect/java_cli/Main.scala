@@ -7,7 +7,7 @@ object Main {
   def main(args: Array[String]): Unit = {
     CommandLineConfiguration.parse(args) match {
       case Some(options) =>
-        AnalyzeSourceCodeUseCase().execute(options.src)
+        AnalyzeSourceCodeUseCase().execute(sourcePath = options.src, jdkPath = options.jdkPath)
       case None =>
         // arguments are bad, error message will have been displayed
         sys.exit(1)
