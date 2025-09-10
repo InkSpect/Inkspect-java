@@ -11,7 +11,7 @@ Please build once before modifying the code.
 
 Install development tools:
 - sbt
-- java 
+- GraalVM CE 21 (For Native Image support) or OpenJDK 21
 
 Or enable Flake for Nix environment:
 
