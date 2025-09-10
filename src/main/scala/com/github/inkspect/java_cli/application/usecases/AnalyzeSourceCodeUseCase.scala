@@ -13,12 +13,12 @@ import io.joern.dataflowengineoss.queryengine.EngineContext
 
 
 class AnalyzeSourceCodeUseCase() {
-  def execute(sourcePath: String): Unit = {
+  def execute(sourcePath: String, jdkPath: String): Unit = {
     println("Hello Joern")
     println(s"Analyzing: ${sourcePath}")
 
     print("Creating CPG... ")
-    val joernConfig    = Config().withInputPath(sourcePath)
+    val joernConfig    = Config().withInputPath(sourcePath).withJdkPath(jdkPath)
     val cpgOrException = JavaSrc2Cpg().createCpg(joernConfig)
 
     cpgOrException match {
