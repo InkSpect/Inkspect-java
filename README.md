@@ -21,11 +21,28 @@ direnv allow
 
 ## Build
 
+- Build Native Image
+
+```
+sbt clean compile graalvm-native-image:packageBin
+```
+
+- Build Java App Packaging
+
 ```
 sbt clean stage
 ```
 
 ## Run
+
+### Run Nagive Image
+
+```
+./target/graalvm-native-image/java_cli -s testprogram/
+```
+
+### Run Java App Packaging
+
 
 - Run CLI (Command Line Interface)
 

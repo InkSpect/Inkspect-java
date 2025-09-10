@@ -1,0 +1,233 @@
+[
+  {
+    "name": "[Lflatgraph.GNode;"
+  },
+  {
+    "name": "[Lio.shiftleft.codepropertygraph.generated.nodes.AbstractNode;"
+  },
+  {
+    "name": "[Lio.shiftleft.codepropertygraph.generated.nodes.AstNode;"
+  },
+  {
+    "name": "[Lio.shiftleft.codepropertygraph.generated.nodes.Call;"
+  },
+  {
+    "name": "[Lio.shiftleft.codepropertygraph.generated.nodes.KeyValuePairBase;"
+  },
+  {
+    "name": "[Lio.shiftleft.codepropertygraph.generated.nodes.Method;"
+  },
+  {
+    "name": "[Lio.shiftleft.codepropertygraph.generated.nodes.TypeDecl;"
+  },
+  {
+    "name": "[Ljava.lang.String;"
+  },
+  {
+    "name": "[Ljava.nio.file.Path;"
+  },
+  {
+    "name": "[Lscala.collection.immutable.List;"
+  },
+  {
+    "name": "[Lscala.collection.immutable.Seq;"
+  },
+  {
+    "name": "ch.qos.logback.classic.BasicConfigurator",
+    "methods": [
+      {
+        "name": "<init>",
+        "parameterTypes": []
+      }
+    ]
+  },
+  {
+    "name": "ch.qos.logback.classic.joran.SerializedModelConfigurator",
+    "methods": [
+      {
+        "name": "<init>",
+        "parameterTypes": []
+      }
+    ]
+  },
+  {
+    "name": "ch.qos.logback.classic.util.DefaultJoranConfigurator",
+    "methods": [
+      {
+        "name": "<init>",
+        "parameterTypes": []
+      }
+    ]
+  },
+  {
+    "name": "flatgraph.DiffGraphApplier",
+    "fields": [
+      {
+        "name": "NewNodeInterface$lzy1"
+      }
+    ]
+  },
+  {
+    "name": "io.joern.x2cpg.AstCreatorBase",
+    "fields": [
+      {
+        "name": "io$joern$x2cpg$AstNodeBuilder$$maxCodeLength$lzy1"
+      }
+    ]
+  },
+  {
+    "name": "io.shiftleft.semanticcpg.language.LazyLocation",
+    "fields": [
+      {
+        "name": "method$lzy1"
+      },
+      {
+        "name": "namespaceOption$lzy1"
+      },
+      {
+        "name": "productElements$lzy1"
+      },
+      {
+        "name": "typeOption$lzy1"
+      }
+    ]
+  },
+  {
+    "name": "java.io.FilePermission"
+  },
+  {
+    "name": "java.lang.ClassValue"
+  },
+  {
+    "name": "java.lang.Module"
+  },
+  {
+    "name": "java.lang.RuntimePermission"
+  },
+  {
+    "name": "java.lang.StringBuilder"
+  },
+  {
+    "name": "java.lang.annotation.Annotation",
+    "methods": [
+      {
+        "name": "annotationType",
+        "parameterTypes": []
+      }
+    ]
+  },
+  {
+    "name": "java.lang.invoke.CallSite"
+  },
+  {
+    "name": "java.lang.invoke.VarHandle",
+    "methods": [
+      {
+        "name": "releaseFence",
+        "parameterTypes": []
+      }
+    ]
+  },
+  {
+    "name": "java.net.NetPermission"
+  },
+  {
+    "name": "java.net.SocketPermission"
+  },
+  {
+    "name": "java.net.URLPermission",
+    "methods": [
+      {
+        "name": "<init>",
+        "parameterTypes": [
+          "java.lang.String",
+          "java.lang.String"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "java.security.AllPermission"
+  },
+  {
+    "name": "java.security.SecurityPermission"
+  },
+  {
+    "name": "java.util.List",
+    "methods": [
+      {
+        "name": "copyOf",
+        "parameterTypes": [
+          "java.util.Collection"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "java.util.Optional",
+    "methods": [
+      {
+        "name": "isEmpty",
+        "parameterTypes": []
+      }
+    ]
+  },
+  {
+    "name": "java.util.PropertyPermission"
+  },
+  {
+    "name": "java.util.concurrent.ForkJoinTask",
+    "fields": [
+      {
+        "name": "aux"
+      },
+      {
+        "name": "status"
+      }
+    ]
+  },
+  {
+    "name": "java.util.concurrent.atomic.AtomicBoolean",
+    "fields": [
+      {
+        "name": "value"
+      }
+    ]
+  },
+  {
+    "name": "java.util.concurrent.atomic.AtomicReference",
+    "fields": [
+      {
+        "name": "value"
+      }
+    ]
+  },
+  {
+    "name": "java.util.function.Function"
+  },
+  {
+    "name": "java.util.zip.DeflaterInputStream"
+  },
+  {
+    "name": "javax.smartcardio.CardPermission"
+  },
+  {
+    "name": "jdk.internal.misc.Unsafe"
+  },
+  {
+    "name": "scopt.OParser$",
+    "fields": [
+      {
+        "name": "0bitmap$1"
+      }
+    ]
+  },
+  {
+    "name": "sun.misc.Unsafe",
+    "fields": [
+      {
+        "name": "theUnsafe"
+      }
+    ]
+  }
+]
