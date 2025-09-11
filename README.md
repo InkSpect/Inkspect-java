@@ -7,7 +7,29 @@ InkSpect is a prototype Static Application Security Testing (SAST) tool built on
 It offers Taint Analysis based on a Code Property Graph.
 Please build once before modifying the code.
 
-## Prerequisite
+
+## Install
+
+- [Installation guide for Linux](doc/install/install-linux.md)
+- [Installation guide for MacOS](doc/install/install-macos.md)
+
+## Usage
+
+```
+./inkspect-java --help
+```
+
+Options:
+```
+-s, --source <value>    source code directory to analyze
+-j, --jdk-path <value>  JDK path for type resolution (default: $JAVA_HOME)
+--help                  Show this help message
+--version               Show version information
+```
+
+## Contribute
+
+### Prerequisite
 
 Install development tools:
 - sbt
@@ -19,7 +41,17 @@ Or enable Flake for Nix environment:
 direnv allow
 ```
 
-## Build
+### Build
+
+#### Native Image
+
+- Update configuration for Reflection
+
+```
+java -agentlib:native-image-agent=config-output-dir=native-image-configs \
+    -cp "$(sbt 'export fullClasspath' | tail -n1)" \
+    com.github.inkspect.java_cli.Main -s testprogram/
+```
 
 - Build Native Image
 
@@ -27,21 +59,23 @@ direnv allow
 sbt clean compile graalvm-native-image:packageBin
 ```
 
-- Build Java App Packaging
+### Universal Package
+
+- Build
 
 ```
 sbt clean stage
 ```
 
-## Run
+### Run
 
-### Run Nagive Image
+#### Run Nagive Image
 
 ```
 ./target/graalvm-native-image/java_cli -s testprogram/
 ```
 
-### Run Java App Packaging
+#### Run Java App Packaging
 
 
 - Run CLI (Command Line Interface)
@@ -54,13 +88,4 @@ sbt clean stage
 
 ```
 ./inkspect_java_repl
-```
-
-# Options
-
-```
--s, --source <value>    source code directory to analyze
--j, --jdk-path <value>  JDK path for type resolution (default: $JAVA_HOME)
---help                  Show this help message
---version               Show version information
 ```
