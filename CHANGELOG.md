@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.1](https://github.com/InkSpect/Inkspect-java/compare/v0.1.0...v0.1.1) (2025-09-11)
+
+
+### Bug Fixes
+
+* add FieldDeclaration in native image configuration ([#18](https://github.com/InkSpect/Inkspect-java/issues/18)) ([8657b15](https://github.com/InkSpect/Inkspect-java/commit/8657b15a7eb9a3aecd95d9e643b65603e3a304e1))
+* add VariableDeclaration in native image configuration ([#16](https://github.com/InkSpect/Inkspect-java/issues/16)) ([f8b9a4d](https://github.com/InkSpect/Inkspect-java/commit/f8b9a4d352f7391c99c89bee73e915fd7db345cf))
+
 ## [0.1.0](https://github.com/InkSpect/Inkspect-java/compare/v0.0.1...v0.1.0) (2025-09-10)
 
 
