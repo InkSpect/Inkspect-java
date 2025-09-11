@@ -33,6 +33,9 @@
     "name": "[Lscala.collection.immutable.Seq;"
   },
   {
+    "name": "[[Ljava.lang.Object;"
+  },
+  {
     "name": "ch.qos.logback.classic.BasicConfigurator",
     "methods": [
       {
@@ -58,6 +61,10 @@
         "parameterTypes": []
       }
     ]
+  },
+  {
+    "name": "com.github.javaparser.ast.body.FieldDeclaration",
+    "allDeclaredFields": true
   },
   {
     "name": "com.github.javaparser.ast.expr.VariableDeclarationExpr",
@@ -104,6 +111,10 @@
   },
   {
     "name": "java.lang.Module"
+  },
+  {
+    "name": "java.lang.Object",
+    "queryAllDeclaredMethods": true
   },
   {
     "name": "java.lang.RuntimePermission"
