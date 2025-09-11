@@ -60,6 +60,10 @@
     ]
   },
   {
+    "name": "com.github.javaparser.ast.expr.VariableDeclarationExpr",
+    "allDeclaredFields": true
+  },
+  {
     "name": "flatgraph.DiffGraphApplier",
     "fields": [
       {
