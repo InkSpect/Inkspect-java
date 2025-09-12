@@ -5,7 +5,7 @@
 - Download latest release
 ```
 curl -L \
-https://github.com/InkSpect/Inkspect-java/releases/latest/download/inkspect-java-darwin-aarch64
+https://github.com/InkSpect/Inkspect-java/releases/latest/download/inkspect-java-darwin-aarch64 \
 --output inkspect-java
 ```
 
