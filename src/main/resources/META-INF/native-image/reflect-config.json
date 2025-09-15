@@ -36,6 +36,9 @@
     "name": "[[Ljava.lang.Object;"
   },
   {
+    "name": "[[[Ljava.lang.Object;"
+  },
+  {
     "name": "ch.qos.logback.classic.BasicConfigurator",
     "methods": [
       {
@@ -67,7 +70,15 @@
     "allDeclaredFields": true
   },
   {
+    "name": "com.github.javaparser.ast.expr.ArrayCreationExpr",
+    "allDeclaredFields": true
+  },
+  {
     "name": "com.github.javaparser.ast.expr.VariableDeclarationExpr",
+    "allDeclaredFields": true
+  },
+  {
+    "name": "com.github.javaparser.ast.type.UnionType",
     "allDeclaredFields": true
   },
   {
@@ -107,13 +118,40 @@
     "name": "java.io.FilePermission"
   },
   {
+    "name": "java.io.Serializable",
+    "allDeclaredFields": true,
+    "queryAllDeclaredMethods": true,
+    "queryAllPublicMethods": true
+  },
+  {
+    "name": "java.lang.Class",
+    "methods": [
+      {
+        "name": "isRecord",
+        "parameterTypes": []
+      }
+    ]
+  },
+  {
     "name": "java.lang.ClassValue"
+  },
+  {
+    "name": "java.lang.Comparable",
+    "allDeclaredFields": true,
+    "queryAllDeclaredMethods": true,
+    "queryAllPublicMethods": true
+  },
+  {
+    "name": "java.lang.Enum",
+    "allDeclaredFields": true,
+    "queryAllDeclaredMethods": true
   },
   {
     "name": "java.lang.Module"
   },
   {
     "name": "java.lang.Object",
+    "allDeclaredFields": true,
     "queryAllDeclaredMethods": true
   },
   {
@@ -130,6 +168,12 @@
         "parameterTypes": []
       }
     ]
+  },
+  {
+    "name": "java.lang.constant.Constable",
+    "allDeclaredFields": true,
+    "queryAllDeclaredMethods": true,
+    "queryAllPublicMethods": true
   },
   {
     "name": "java.lang.invoke.CallSite"
@@ -163,6 +207,9 @@
   },
   {
     "name": "java.security.AllPermission"
+  },
+  {
+    "name": "java.security.SecureRandomParameters"
   },
   {
     "name": "java.security.SecurityPermission"
@@ -230,6 +277,22 @@
     "name": "jdk.internal.misc.Unsafe"
   },
   {
+    "name": "scala.collection.parallel.ForkJoinTasks$",
+    "fields": [
+      {
+        "name": "0bitmap$1"
+      }
+    ]
+  },
+  {
+    "name": "scala.collection.parallel.immutable.ParVector",
+    "fields": [
+      {
+        "name": "0bitmap$1"
+      }
+    ]
+  },
+  {
     "name": "scopt.OParser$",
     "fields": [
       {
@@ -242,6 +305,30 @@
     "fields": [
       {
         "name": "theUnsafe"
+      }
+    ]
+  },
+  {
+    "name": "sun.security.provider.NativePRNG",
+    "methods": [
+      {
+        "name": "<init>",
+        "parameterTypes": []
+      },
+      {
+        "name": "<init>",
+        "parameterTypes": [
+          "java.security.SecureRandomParameters"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "sun.security.provider.SHA",
+    "methods": [
+      {
+        "name": "<init>",
+        "parameterTypes": []
       }
     ]
   }
